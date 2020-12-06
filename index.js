@@ -15,21 +15,35 @@ inquirer
     },
     {
       type: 'input',
-      name: 'projectName',
-      message: `What's the title of your project?`,
+      name: 'installation',
+      message: `What's the process to install this App?`,
     },
-    // {
-    //   type: 'checkbox',
-    //   message: 'Which of the following should be part of your "Table of Contents"?',
-    //   name: 'stack',
-    //   choices: ['HTML', 'CSS', 'JavaScript', 'MySQL'],
-    // },
-    // {
-    //   type: 'list',
-    //   message: 'What is your preferred method of communication?',
-    //   name: 'contact',
-    //   choices: ['email', 'phone', 'telekinesis'],
-    // },
+    {
+      type: 'input',
+      name: 'usage',
+      message: `What is a suggested use for this App?`,
+    },
+    {
+      type: 'input',
+      name: 'license',
+      message: `Is there a license to include to this App?`,
+    },
+    {
+      type: 'input',
+      name: 'contributing',
+      message: `What are the guidelines to contributing to this App?`,
+    },
+    {
+      type: 'input',
+      name: 'tests',
+      message: `Is there any tests to run for this App?`,
+    },
+    {
+      type: 'input',
+      name: 'questions',
+      message: `Where should you be contacted for questions regarding the App?`,
+    },
+    
   ])
   .then((response) => {
     console.log(response);
@@ -51,36 +65,29 @@ inquirer
   
   ## Installation
 
-
+    ${response.installation}
 
   ## Usage
 
+    ${response.usage}
 
-  
-  
   ## License
 
+    ${response.license}
 
-  
-  
   ## Contributing Guidelines
+    
+    ${response.contributing}
 
-
-  
-  
   ## Tests
 
+    ${response.tests}
 
-  
-  
   ## Questions
 
-
-  
-  
+    ${response.questions}
     
   `
-
     fs.writeFile('README.md', readMeString, 'utf8', (err) =>
       err ? console.log(err) : console.log('Success!')
     );
