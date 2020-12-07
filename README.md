@@ -17,6 +17,7 @@
   ## Installation
 
   The user should make sure to download the necessary dependencies prior to running the app. The app will then be run in the terminal with the commands "node index.js"
+  Please watch this [video](https://drive.google.com/file/d/1xsMEavhdOww3cxGuhVkNVDYGq0FGOLn2/view) as an example on how the application works.
 
   ## Usage
 
