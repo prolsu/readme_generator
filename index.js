@@ -44,7 +44,11 @@ inquirer
       name: 'username',
       message: `What's your GitHub username?`,
     },
-    
+    {
+      type: 'input',
+      name: 'email',
+      message: 'What email should be used to cantact you?',
+    }
   ])
   .then((response) => {
     console.log(response);
@@ -70,8 +74,6 @@ inquirer
         badgeLink = "MIT";
         break
     };
-    console.log(badgeIcon);
-    console.log(badgeLink);
 
     const readMeString = `# ${response.projectName}
   [![Badge](https://img.shields.io/badge/License-${badgeIcon}-blue.svg)](https://opensource.org/licenses/${badgeLink})
@@ -98,8 +100,8 @@ inquirer
   ${response.usage}
 
   ## License
-
-  Please click the following [link](https://opensource.org/licenses/${badgeLink}) for more details.
+  This application is covered under the ${response.badge} license.
+  Please visit the following [link](https://opensource.org/licenses/${badgeLink}) for more details.
 
   ## Contributing Guidelines
     
@@ -111,7 +113,7 @@ inquirer
 
   ## Questions
   Should you need to contact me, please visit my GitHub Account at https://github.com/${response.username}/
-    
+  For additional assistance with the app, please email me at: ${response.email}
     
   `
     fs.writeFile('README.md', readMeString, 'utf8', (err) =>
