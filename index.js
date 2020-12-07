@@ -9,6 +9,12 @@ inquirer
       message: `What's the title of your project?`,
     },
     {
+      type: 'list',
+      name: 'badge',
+      message: `What license should be used for this file?`,
+      choices: ["Mozilla", "Apache", "BSD", "MIT"],
+    },
+    {
       type: 'input',
       name: 'description',
       message: `What's a description for this project?`,
@@ -25,11 +31,6 @@ inquirer
     },
     {
       type: 'input',
-      name: 'license',
-      message: `Is there a license to include to this App?`,
-    },
-    {
-      type: 'input',
       name: 'contributing',
       message: `What are the guidelines to contributing to this App?`,
     },
@@ -40,19 +41,44 @@ inquirer
     },
     {
       type: 'input',
-      name: 'questions',
-      message: `Where should you be contacted for questions regarding the App?`,
+      name: 'username',
+      message: `What's your GitHub username?`,
     },
     
   ])
   .then((response) => {
     console.log(response);
-   
+
+    let badgeIcon = response.badge;
+    let badgeLink;
+
+    switch(badgeIcon){
+      case "Mozilla":
+        badgeIcon ="MPL%202.0";
+        badgeLink = "MPL-2.0";
+        break
+      case "Apache":
+        badgeIcon = "Apache%202.0";
+        badgeLink = "Apache-2.0";
+        break
+      case "BSD":
+        badgeIcon = "BSD%203--Clause";
+        badgeLink = "BSD-3-Clause";
+        break
+      case "MIT":
+        badgeIcon = "MIT";
+        badgeLink = "MIT";
+        break
+    };
+    console.log(badgeIcon);
+    console.log(badgeLink);
+
     const readMeString = `# ${response.projectName}
+  [![Badge](https://img.shields.io/badge/License-${badgeIcon}-blue.svg)](https://opensource.org/licenses/${badgeLink})
 
   ## Description
     
-    ${response.description}
+  ${response.description}
 
   ## Table of contents
   
@@ -65,27 +91,27 @@ inquirer
   
   ## Installation
 
-    ${response.installation}
+  ${response.installation}
 
   ## Usage
 
-    ${response.usage}
+  ${response.usage}
 
   ## License
 
-    ${response.license}
+  Please click the following [link](https://opensource.org/licenses/${badgeLink}) for more details.
 
   ## Contributing Guidelines
     
-    ${response.contributing}
+  ${response.contributing}
 
   ## Tests
 
-    ${response.tests}
+  ${response.tests}
 
   ## Questions
-
-    ${response.questions}
+  Should you need to contact me, please visit my GitHub Account at https://github.com/${response.username}/
+    
     
   `
     fs.writeFile('README.md', readMeString, 'utf8', (err) =>

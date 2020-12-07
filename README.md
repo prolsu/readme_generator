@@ -1,8 +1,9 @@
 # README File Generator
+  [![Badge](https://img.shields.io/badge/License-MPL%202.0-blue.svg)](https://opensource.org/licenses/MPL-2.0)
 
   ## Description
     
-    A CLI app that takes input from the user to create a README.md file.
+  This is a simple CLI App that takes input from the user to create a README file.
 
   ## Table of contents
   
@@ -14,20 +15,27 @@
   * [Questions](#Questions)
   
   ## Installation
-    The app runs in the terminal, and it's called by running the commands 'node index.js'
+
+  The user should make sure to download the necessary dependencies prior to running the app. The app will then be run in the terminal with the commands "node index.js"
 
   ## Usage
-    This app assist the user by reducing the time otherwise spent to create a README file for their projects. The app will ask the user to add input to specific areas such as installation and usage, among other elements. 
-  
+
+  As a busy developer, this app assists the user by reducing the usual time spent to create a README file from scratch. 
+
   ## License
-    Currently working on obtaining one.
+
+  Please click the following [link](https://opensource.org/licenses/MPL-2.0) for more details.
 
   ## Contributing Guidelines
-    Any user looking to contribute to the app can fork the repo, work on it, and later request a pull from the creator.
+    
+  Any user looking to contribute to the app can fork the repo, work on it, and later request a pull from the creator.
 
   ## Tests
-    Not at this time.
+
+  No tests at this time.
 
   ## Questions
-  https://github.com/prolsu
+  Should you need to contact me, please visit my GitHub Account at https://github.com/prolsu/
+    
+    
   
